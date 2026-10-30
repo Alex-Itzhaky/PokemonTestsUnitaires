@@ -105,7 +105,7 @@ namespace Pkmn
         /// <exception cref="NotImplementedException"></exception>
         public void ReceiveAttack(Skill s)
         {
-            CurrentHealth = Mathf.Clamp(CurrentHealth - (int)(((s.Power - Defense) * TypeResolver.GetFactor(s.Type, _baseType))), 0, MaxHealth);
+            CurrentHealth = Mathf.Clamp(CurrentHealth - (int)(((float)s.Power - (float)Defense) * TypeResolver.GetFactor(s.Type, _baseType)), 0, MaxHealth);
         }
 
         public void UseItem(Item item)
